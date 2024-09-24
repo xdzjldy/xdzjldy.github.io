@@ -1,89 +1,78 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
-  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
   
   <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Burpsuite1.Proxy：用于拦截和修改HTTP请求和响应，并允许用户在发送到目标服务器之前手动修改请求内容。 1.1.Intercept:允许用户拦截应用程序的HTTP和HTTPS请求，查看和修改请求，然后转发到目标服务器。使用Intercept，用户可以深入分析应用程序的请求和响应，并查找潜在的漏洞。Intercept还可以帮助用户快速验证漏洞的利用。   在浏览器上安装Proxy S">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2024/09/09/Burpsuite/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Burpsuite1.Proxy：用于拦截和修改HTTP请求和响应，并允许用户在发送到目标服务器之前手动修改请求内容。 1.1.Intercept:允许用户拦截应用程序的HTTP和HTTPS请求，查看和修改请求，然后转发到目标服务器。使用Intercept，用户可以深入分析应用程序的请求和响应，并查找潜在的漏洞。Intercept还可以帮助用户快速验证漏洞的利用。   在浏览器上安装Proxy S">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-09-09T07:27:36.444Z">
-<meta property="article:modified_time" content="2024-09-24T05:49:01.683Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
+  <meta name="author" content="John Doe">
+  <meta name="description" content="Burpsuite1.Proxy：用于拦截和修改HTTP请求和响应，并允许用户在发送到目标服务器之前手动修改请求内容。
+1.1.Intercept:允许用户拦截应用程序的HTTP和HTTPS请求，查看和修改请求，然后转发到目标服务器。使用Intercept，用户可以深入分析应用程序的请求和响应，并查">
   
   
   
-<link rel="stylesheet" href="/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Hexo"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-Burpsuite" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/09/Burpsuite/" class="article-date">
-  <time class="dt-published" datetime="2024-09-09T07:27:36.444Z" itemprop="datePublished">2024-09-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+
+  <article class="standard post">
+    <div class="title">
       
-        <h3 id="Burpsuite"><a href="#Burpsuite" class="headerlink" title="Burpsuite"></a>Burpsuite</h3><p>1.Proxy：用于拦截和修改HTTP请求和响应，并允许用户在发送到目标服务器之前手动修改请求内容。</p>
+  
+    <h1 class="page-title center">
+        
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2024-09-09T07:27:36.444Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2024-09-09
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Burpsuite"><span class="toc-text">Burpsuite</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP"><span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-text">数据包格式：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-GET-%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E5%8C%85%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-text">1.GET 请求数据包格式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-POST-%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E5%8C%85%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-text">2.POST 请求数据包格式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-URL-%E5%8F%82%E6%95%B0%EF%BC%9AGET-%E8%AF%B7%E6%B1%82%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87-URL-%E4%B8%AD%E6%8C%87%E5%AE%9A%E7%9A%84-key-value-%E5%BD%A2%E5%BC%8F%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E3%80%82"><span class="toc-text">1.URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AF%B7%E6%B1%82%E4%BD%93%EF%BC%88%E4%BB%85%E9%80%82%E7%94%A8%E4%BA%8E-POST%E3%80%81PUT%E3%80%81PATCH-%E8%AF%B7%E6%B1%82%EF%BC%89%EF%BC%9A%E5%BD%93-POST%E3%80%81PUT-%E6%88%96-PATCH-%E8%AF%B7%E6%B1%82%E7%9A%84-URL-%E4%B8%AD%E6%B2%A1%E6%9C%89%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E6%97%B6%EF%BC%8C%E5%8F%82%E6%95%B0%E4%BC%9A%E8%A2%AB%E6%94%BE%E7%BD%AE%E5%9C%A8%E8%AF%B7%E6%B1%82%E4%BD%93%E4%B8%AD%E3%80%82"><span class="toc-text">2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-1"><span class="toc-text">HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F"><span class="toc-text">1.请求报文格式</span></a></li></ol></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h3 id="Burpsuite"><a href="#Burpsuite" class="headerlink" title="Burpsuite"></a>Burpsuite</h3><p>1.Proxy：用于拦截和修改HTTP请求和响应，并允许用户在发送到目标服务器之前手动修改请求内容。</p>
 <p>1.1.Intercept:允许用户拦截应用程序的HTTP和HTTPS请求，查看和修改请求，然后转发到目标服务器。使用Intercept，用户可以深入分析应用程序的请求和响应，并查找潜在的漏洞。Intercept还可以帮助用户快速验证漏洞的利用。  </p>
 <p>在浏览器上安装Proxy SwitchyOmega,进行快速代理。</p>
 <p>须将浏览器的流量包转移到burpsuit上，burpsuit再进行发包。</p>
@@ -110,7 +99,7 @@
 <p> 请求体（Body）：放置实际提交的数据，不同的 Content-Type 决定了数据的格式，可以是表单数据、JSON、XML 等。</p>
 <p>多次发送相同的 GET 请求会产生相同的结果，不会对服务器状态产生影响。<br>这使得 GET 请求适合用于获取静态资源，如网页、图片、文件等。<br>POST 请求主要用于向服务器提交数据，通常用于创建、更新或删除资源。它将请求的参数作为请求体的一部分发送到服务器。POST 请求是非幂等的，即多次发送相同的 POST 请求可能会产生不同的结果，因为它可能会改变服务器的状态。<br>GET 和 POST 请求的存在是为了满足不同的需求。GET 请求适用于获取数据，而 POST 请求适用于提交数据并对服务器状态进行更改。选择正确的请求方法取决于请求的性质和预期的服务器操作。</p>
 <p>GET比POST更不安全，因为GET参数会直接暴露在url上。所以不能用来传递敏感信息get 请求的参数传递方式<br>在 HTTP 请求中，GET 请求可以通过 URL 参数或者请求体的方式传递参数。</p>
-<h4 id="1-URL-参数：GET-请求可以通过-URL-中指定的-key-value-形式传递参数。"><a href="#1-URL-参数：GET-请求可以通过-URL-中指定的-key-value-形式传递参数。" class="headerlink" title="1.URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。"></a>1.URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。</h4><h4 id="2-请求体（仅适用于-POST、PUT、PATCH-请求）：当-POST、PUT-或-PATCH-请求的-URL-中没有指定参数时，参数会被放置在请求体中。"><a href="#2-请求体（仅适用于-POST、PUT、PATCH-请求）：当-POST、PUT-或-PATCH-请求的-URL-中没有指定参数时，参数会被放置在请求体中。" class="headerlink" title="2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。"></a>2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。</h4><p>请求体中的数据可以是表单数据、JSON 数据等。<br>例如，使用 POST 请求将 JSON 数据发送到如下 URL 时，请求体中的 JSON 数据如下：<br>{<br> “name”: “John Doe”,<br> “email”: “<a href="mailto:&#106;&#x6f;&#x68;&#110;&#x2e;&#100;&#x6f;&#101;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#109;">&#106;&#x6f;&#x68;&#110;&#x2e;&#100;&#x6f;&#101;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#109;</a>“<br>}</p>
+<h4 id="1-URL-参数：GET-请求可以通过-URL-中指定的-key-value-形式传递参数。"><a href="#1-URL-参数：GET-请求可以通过-URL-中指定的-key-value-形式传递参数。" class="headerlink" title="1.URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。"></a>1.URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。</h4><h4 id="2-请求体（仅适用于-POST、PUT、PATCH-请求）：当-POST、PUT-或-PATCH-请求的-URL-中没有指定参数时，参数会被放置在请求体中。"><a href="#2-请求体（仅适用于-POST、PUT、PATCH-请求）：当-POST、PUT-或-PATCH-请求的-URL-中没有指定参数时，参数会被放置在请求体中。" class="headerlink" title="2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。"></a>2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。</h4><p>请求体中的数据可以是表单数据、JSON 数据等。<br>例如，使用 POST 请求将 JSON 数据发送到如下 URL 时，请求体中的 JSON 数据如下：<br>{<br> “name”: “John Doe”,<br> “email”: “<a href="mailto:&#106;&#x6f;&#x68;&#x6e;&#46;&#100;&#111;&#x65;&#64;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#x6d;">&#106;&#x6f;&#x68;&#x6e;&#46;&#100;&#111;&#x65;&#64;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#x6d;</a>“<br>}</p>
 <h3 id="HTTP-1"><a href="#HTTP-1" class="headerlink" title="HTTP"></a>HTTP</h3><h4 id="1-请求报文格式"><a href="#1-请求报文格式" class="headerlink" title="1.请求报文格式"></a>1.请求报文格式</h4><p><method><request-URL><version><br><headers></p>
 <entity-body>
 #### 2.响应报文格式
@@ -136,121 +125,98 @@ HTTP状态返回代码 3xx （重定向）
 HTTP状态返回代码 4xx（请求错误）
 HTTP状态返回代码 5xx（服务器错误）
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/09/09/Burpsuite/" data-id="cm1fzczwj0000q0msejhx46nl" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2024/09/17/HTML/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
-  
-  
-</nav>
 
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li></ul>
-    </div>
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
 
 
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/09/24/JavaScript/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/17/HTML/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/09/Burpsuite/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+
+
+
+
     </div>
   </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2020
+    </div>
+    <div class="secondrow">
+        <a target="_blank" rel="noopener" href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
 </footer>
+  <script type="text/javascript">
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+// disqus scripts
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+// dropdown scripts
+function $(s) {
+    return document.querySelector(s)
+  }
 
+  function $$(s) {
+    return document.querySelectorAll(s)
+  }
+  var dropDownElArr = $$('.dropdown')
+  for (var i = 0; i < dropDownElArr.length; i += 1) {
+    dropDownElArr[i].addEventListener('click', function(event) {
+      var content = this.querySelector('.dropdown-content')
+      event.stopPropagation()
+      if (content.className.indexOf('open') < 0) {
+        content.classList.add('open')
+      } else {
+        content.classList.remove('open')
+      }
+    })
+  }
+  document.body.addEventListener('click', function() {
+    var dropDownContentElArr = $$('.dropdown-content')
+    for (var i = 0; i < dropDownContentElArr.length; i += 1) {
+      dropDownContentElArr[i].classList.remove('open')
+    }
+  })
 
+  // smooth scroll
+  $$('a[href^="#"]').forEach(e=>{
+    e.addEventListener("click", function(e) {
+      e.preventDefault();
+      var t = this.getAttribute("href").substr(1);
+      $(`[id='${decodeURIComponent(t)}']`).scrollIntoView({
+        behavior: "smooth"
+      }),
+      t === "top" ? history.replaceState(null, null, " ") : history.pushState(null, null, `#${t}`)
+    })
+  })
 
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+// search
+var searchEl = document.querySelector("#local-search-input")
+if (searchEl) searchEl.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    var s = e.target.value
+    window.open('//www.google.com/search?q=site:http://example.com%20' + s, '_blank').focus()
+  }
+})
 
+</script>
 
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
 </html>
