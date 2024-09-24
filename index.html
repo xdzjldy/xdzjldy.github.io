@@ -69,46 +69,28 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-JavaScript" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/09/24/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-09-24T01:22:28.360Z" itemprop="datePublished">2024-09-24</time>
+    <a href="/2024/09/24/JavaScript/" class="article-date">
+  <time class="dt-published" datetime="2024-09-24T05:27:03.596Z" itemprop="datePublished">2024-09-24</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><h4 id="事件监听程序"><a href="#事件监听程序" class="headerlink" title="事件监听程序"></a>事件监听程序</h4><h5 id="addEventListener-方法"><a href="#addEventListener-方法" class="headerlink" title="addEventListener() 方法"></a>addEventListener() 方法</h5><p>element.addEventListener(event, function, useCapture);<br>第一个参数是事件的类型（比如 “click” 或 “mousedown”）。<br>第二个参数是当事件发生时我们需要调用的函数。<br>第三个参数是布尔值，指定使用事件冒泡还是事件捕获。此参数是可选的。<br>注意：请勿对事件使用 “on” 前缀；请使用 “click” 代替 “onclick”。</p>
+<h5 id="选取HTML元素"><a href="#选取HTML元素" class="headerlink" title="选取HTML元素"></a>选取HTML元素</h5><p>1.getElementById(id): 通过元素的 id 属性来选中元素。<br>var element &#x3D; document.getElementById(“要选的元素”);<br>2.getElementsByClassName(name): 通过元素的 class 属性来选中元素。<br>var elements &#x3D; document.getElementsByClassName(“要选的元素”);<br>3.getElementsByTagName(name): 通过元素的标签名来选中元素。<br>var elements &#x3D; document.getElementsByTagName(“元素的标签名”);</p>
+<h5 id="添加-修改属性值"><a href="#添加-修改属性值" class="headerlink" title="添加&#x2F;修改属性值"></a>添加&#x2F;修改属性值</h5><p>使用 Object.defineProperty<br>使用 Object.defineProperty() 函数可以为对象添加属性，或者修改现有属性。如果指定的属性名在对象中不存在，则执行添加操作；如果在对象中存在同名属性，则执行修改操作。<br>Object.defineProperty(object, propertyname, descriptor);<br>object：指定要添加或修改属性的对象，可以是 JavaScript 对象或者 DOM 对象。<br>propertyname：表示属性名的字符串。<br>descriptor：定义属性的描述符，包括对数据属性或访问器属性。</p>
+<h5 id="创建HTML标签"><a href="#创建HTML标签" class="headerlink" title="创建HTML标签"></a>创建HTML标签</h5><p>Document.createElement()<br>createElement(tagName) createElement(tagName, options)</p>
+<h5 id="添加属性"><a href="#添加属性" class="headerlink" title="添加属性"></a>添加属性</h5><p>setAttribute()<br>element.setAttribute(attribute, value);<br>element是要添加属性的HTML元素对象，attribute是要添加的属性名，value是要设置的属性值。<br>将元素添加到DOM中<br>parentElement.appendChild()</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/09/24/hello-world/" data-id="cm1frz64f0000zsmsh86r19pa" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/09/24/JavaScript/" data-id="cm1g023wi00003smsdxd9hj0r" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -157,11 +139,6 @@
 <li><p>绝对 URL - 链接到托管在其他网站上的外部图像。</p>
 </li>
 <li><p>相对 URL - 链接到托管在网站内部的图像。<br>  <a>href 属性规定链接指向的页面的 URL。</p>
-<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><h4 id="事件监听程序"><a href="#事件监听程序" class="headerlink" title="事件监听程序"></a>事件监听程序</h4><h5 id="addEventListener-方法"><a href="#addEventListener-方法" class="headerlink" title="addEventListener() 方法"></a>addEventListener() 方法</h5><p>  element.addEventListener(event, function, useCapture);<br>  第一个参数是事件的类型（比如 “click” 或 “mousedown”）。<br>  第二个参数是当事件发生时我们需要调用的函数。<br>  第三个参数是布尔值，指定使用事件冒泡还是事件捕获。此参数是可选的。<br>  注意：请勿对事件使用 “on” 前缀；请使用 “click” 代替 “onclick”。</p>
-<h5 id="选取HTML元素"><a href="#选取HTML元素" class="headerlink" title="选取HTML元素"></a>选取HTML元素</h5><p>  1.getElementById(id): 通过元素的 id 属性来选中元素。<br>  var element &#x3D; document.getElementById(“要选的元素”);<br>  2.getElementsByClassName(name): 通过元素的 class 属性来选中元素。<br>  var elements &#x3D; document.getElementsByClassName(“要选的元素”);<br>  3.getElementsByTagName(name): 通过元素的标签名来选中元素。<br>  var elements &#x3D; document.getElementsByTagName(“元素的标签名”);</p>
-<h5 id="添加-修改属性值"><a href="#添加-修改属性值" class="headerlink" title="添加&#x2F;修改属性值"></a>添加&#x2F;修改属性值</h5><p>  使用 Object.defineProperty<br>  使用 Object.defineProperty() 函数可以为对象添加属性，或者修改现有属性。如果指定的属性名在对象中不存在，则执行添加操作；如果在对象中存在同名属性，则执行修改操作。<br>  Object.defineProperty(object, propertyname, descriptor);<br>  object：指定要添加或修改属性的对象，可以是 JavaScript 对象或者 DOM 对象。<br>  propertyname：表示属性名的字符串。<br>  descriptor：定义属性的描述符，包括对数据属性或访问器属性。</p>
-<h5 id="创建HTML标签"><a href="#创建HTML标签" class="headerlink" title="创建HTML标签"></a>创建HTML标签</h5><p>  Document.createElement()<br>  createElement(tagName) createElement(tagName, options)</p>
-<h5 id="添加属性"><a href="#添加属性" class="headerlink" title="添加属性"></a>添加属性</h5><p>  setAttribute()<br>  element.setAttribute(attribute, value);<br>  element是要添加属性的HTML元素对象，attribute是要添加的属性名，value是要设置的属性值。<br>  将元素添加到DOM中<br>  parentElement.appendChild()</p>
 <h4 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h4><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4>  <?php
   // PHP 代码;
   ?>
@@ -390,7 +367,7 @@ HTTP状态返回代码 5xx（服务器错误）
       <ul>
         
           <li>
-            <a href="/2024/09/24/hello-world/">Hello World</a>
+            <a href="/2024/09/24/JavaScript/">(no title)</a>
           </li>
         
           <li>
