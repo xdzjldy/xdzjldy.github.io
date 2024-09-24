@@ -1,78 +1,183 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="google-site-verification" content="" />
-  <meta name="referrer" content="unsafe-url">
-  
-  <title>Hexo</title>
-  <meta name="author" content="John Doe">
-  <meta name="description" content="HTML超文本标记语言是一种用于创建网页的标准标记语言。可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。HTML 是用来描述网页的一种语言。HTML 是一种标记语言标记语言是一套标记标签HTML 使用标记标签来描述网页
-HTML语法结构&amp;lt;!DOCTYP">
-  
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:site_name" content="Hexo"/>
-  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/m.min.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="John Doe">
+    
+    
+    
+    
+    
+    
+    <title>Hexo</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
 
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: 'Loading';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
 <meta name="generator" content="Hexo 7.3.0"></head>
-
 <body>
-  <a id="top"></a>
-  <div id="main">
-    <div class="main-ctnr">
-      <div class="behind">
-  <a href="/" class="back black-color">
-    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-        <path d="M2 30 L30 2 M30 30 L2 2"></path>
-    </svg>
-  </a>
-  
-</div>
-
-
-  <article class="standard post">
-    <div class="title">
-      
-  
-    <h1 class="page-title center">
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
         
-    </h1>
-  
-
-
-    </div>
-    <div class="meta center">
-      <time datetime="2024-09-17T01:49:12.178Z" itemprop="datePublished">
-  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
-  </svg>
-  &nbsp;
-  2024-09-17
-</time>
-
-
-
-
-
-
-    </div>
-    <hr>
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        
+        <li>
+            <a class="lrc-control">Open Lyrics</a>
+        </li>
+        
+        <li>
+            <a class="scroll-to-top">Top</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" http://cube-1252774894.cosgz.myqcloud.com/background.png " alt="头部背景图片">
     
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84"><span class="toc-text">HTML语法结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP"><span class="toc-text">PHP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-NULL-%E5%80%BC"><span class="toc-text">PHP NULL 值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B"><span class="toc-text">PHP 资源类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83"><span class="toc-text">PHP 类型比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP%E5%B8%B8%E9%87%8F"><span class="toc-text">PHP常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-PHP-%E5%B8%B8%E9%87%8F"><span class="toc-text">设置 PHP 常量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F"><span class="toc-text">预定义常量</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%98%E9%87%8F"><span class="toc-text">PHP字符串变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-%E5%B9%B6%E7%BD%AE%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">PHP 并置运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-strlen-%E5%87%BD%E6%95%B0"><span class="toc-text">PHP strlen() 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-strpos-%E5%87%BD%E6%95%B0"><span class="toc-text">PHP strpos() 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">括号的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="toc-text">PHP条件语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#if-%E8%AF%AD%E5%8F%A5-%E5%9C%A8%E6%9D%A1%E4%BB%B6%E6%88%90%E7%AB%8B%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="toc-text">if 语句 - 在条件成立时执行代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if%E2%80%A6else-%E8%AF%AD%E5%8F%A5-%E5%9C%A8%E6%9D%A1%E4%BB%B6%E6%88%90%E7%AB%8B%E6%97%B6%E6%89%A7%E8%A1%8C%E4%B8%80%E5%9D%97%E4%BB%A3%E7%A0%81%EF%BC%8C%E6%9D%A1%E4%BB%B6%E4%B8%8D%E6%88%90%E7%AB%8B%E6%97%B6%E6%89%A7%E8%A1%8C%E5%8F%A6%E4%B8%80%E5%9D%97%E4%BB%A3%E7%A0%81"><span class="toc-text">if…else 语句 - 在条件成立时执行一块代码，条件不成立时执行另一块代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if%E2%80%A6elseif%E2%80%A6-else-%E8%AF%AD%E5%8F%A5-%E5%9C%A8%E8%8B%A5%E5%B9%B2%E6%9D%A1%E4%BB%B6%E4%B9%8B%E4%B8%80%E6%88%90%E7%AB%8B%E6%97%B6%E6%89%A7%E8%A1%8C%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-text">if…elseif….else 语句 - 在若干条件之一成立时执行一个代码块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#switch-%E8%AF%AD%E5%8F%A5-%E5%9C%A8%E8%8B%A5%E5%B9%B2%E6%9D%A1%E4%BB%B6%E4%B9%8B%E4%B8%80%E6%88%90%E7%AB%8B%E6%97%B6%E6%89%A7%E8%A1%8C%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-text">switch 语句 - 在若干条件之一成立时执行一个代码块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PHP-Switch-%E8%AF%AD%E5%8F%A5"><span class="toc-text">PHP Switch 语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E6%95%B0%E7%BB%84"><span class="toc-text">PHP数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-%E6%95%B0%E5%80%BC%E6%95%B0%E7%BB%84"><span class="toc-text">PHP 数值数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84"><span class="toc-text">PHP 关联数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="toc-text">PHP 数组排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-%E8%B6%85%E7%BA%A7%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">PHP 超级全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-%E8%A1%A8%E5%8D%95%E5%92%8C%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5"><span class="toc-text">PHP 表单和用户输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%98%AF%E5%90%A6%E5%8C%85%E5%90%AB%E6%8C%87%E5%AE%9A%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">php判断字符串中是否包含指定字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-text">PHP文件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6"><span class="toc-text">打开文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="toc-text">关闭文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E6%96%87%E4%BB%B6%E6%9C%AB%E5%B0%BE%EF%BC%88EOF%EF%BC%89"><span class="toc-text">检测文件末尾（EOF）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%90%E8%A1%8C%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="toc-text">逐行读取文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%90%E5%AD%97%E7%AC%A6%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="toc-text">逐字符读取文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-Cookie"><span class="toc-text">PHP Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA-Cookie%EF%BC%9F"><span class="toc-text">如何创建 Cookie？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8F%96%E5%9B%9E-Cookie-%E7%9A%84%E5%80%BC%EF%BC%9F"><span class="toc-text">如何取回 Cookie 的值？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4-Cookie%EF%BC%9F"><span class="toc-text">如何删除 Cookie？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-Session"><span class="toc-text">PHP Session</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B-PHP-Session"><span class="toc-text">开始 PHP Session</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8-Session-%E5%8F%98%E9%87%8F"><span class="toc-text">存储 Session 变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%80%E6%AF%81-Session"><span class="toc-text">销毁 Session</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-%E8%BF%9E%E6%8E%A5-MySQL"><span class="toc-text">PHP 连接 MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQLi-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">MySQLi - 面向对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQLi-%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B"><span class="toc-text">MySQLi - 面向过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-MySQL-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">PHP MySQL 创建数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL-%E6%98%AF%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%85%B3%E8%81%94%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B0%86%E6%95%B0%E6%8D%AE%E4%BF%9D%E5%AD%98%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E8%A1%A8%E4%B8%AD%E3%80%82"><span class="toc-text">MySQL 是最流行的关系型数据库管理系统，关联数据库将数据保存在不同的表中。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E8%AF%AD%E5%8F%A5%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">SQL语句的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-DQL%EF%BC%9A%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80%EF%BC%88%E5%87%A1%E6%98%AF%E5%B8%A6%E6%9C%89select%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E9%83%BD%E6%98%AF%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%EF%BC%89"><span class="toc-text">1.DQL：数据查询语言（凡是带有select关键字的都是查询语句）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-DML%EF%BC%9A%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%EF%BC%88%E5%87%A1%E6%98%AF%E5%AF%B9%E8%A1%A8%E5%8D%95%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%A2%9E%E5%88%A0%E6%94%B9%E7%9A%84%E9%83%BD%E6%98%AFDML%EF%BC%89"><span class="toc-text">2.DML：数据操作语言（凡是对表单中的数据进行增删改的都是DML）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-DDL%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80%EF%BC%88%E5%87%A1%E6%98%AF%E5%B8%A6%E6%9C%89create%E3%80%81drop%E3%80%81alter%E7%9A%84%E9%83%BD%E6%98%AFDDL%EF%BC%89"><span class="toc-text">3.DDL：数据定义语言（凡是带有create、drop、alter的都是DDL）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-text">表的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">MySQL中的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AEinsert%EF%BC%88DML%EF%BC%89"><span class="toc-text">插入数据insert（DML）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9update%EF%BC%88DML%EF%BC%89"><span class="toc-text">修改update（DML）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A%E8%AF%AD%E6%B3%95"><span class="toc-text">注释语法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E9%80%BB%E8%BE%91"><span class="toc-text">查询逻辑</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-text">MySQL漏洞利用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%AF%86%E7%A0%81%E8%8E%B7%E5%8F%96"><span class="toc-text">1.密码获取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96webshell"><span class="toc-text">2.获取webshell</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%8F%90%E6%9D%83"><span class="toc-text">3.提权</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%92%8C%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">局部和全局作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-global-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">PHP global 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Static-%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">Static 作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">参数作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-echo-%E5%92%8C-print-%E8%AF%AD%E5%8F%A5"><span class="toc-text">PHP echo 和 print 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#echo-%E5%92%8C-print-%E5%8C%BA%E5%88%AB"><span class="toc-text">echo 和 print 区别:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-EOF-heredoc-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="toc-text">PHP EOF(heredoc) 使用说明</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-EOF-%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BB%BB%E6%84%8F%E5%85%B6%E5%AE%83%E5%AD%97%E7%AC%A6%E4%BB%A3%E6%9B%BF%EF%BC%8C%E5%8F%AA%E9%9C%80%E4%BF%9D%E8%AF%81%E7%BB%93%E6%9D%9F%E6%A0%87%E8%AF%86%E4%B8%8E%E5%BC%80%E5%A7%8B%E6%A0%87%E8%AF%86%E4%B8%80%E8%87%B4%E3%80%82"><span class="toc-text">2.EOF 可以用任意其它字符代替，只需保证结束标识与开始标识一致。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E7%BB%93%E6%9D%9F%E6%A0%87%E8%AF%86%E5%BF%85%E9%A1%BB%E9%A1%B6%E6%A0%BC%E7%8B%AC%E8%87%AA%E5%8D%A0%E4%B8%80%E8%A1%8C-%E5%8D%B3%E5%BF%85%E9%A1%BB%E4%BB%8E%E8%A1%8C%E9%A6%96%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%89%8D%E5%90%8E%E4%B8%8D%E8%83%BD%E8%A1%94%E6%8E%A5%E4%BB%BB%E4%BD%95%E7%A9%BA%E7%99%BD%E5%92%8C%E5%AD%97%E7%AC%A6-%E3%80%82"><span class="toc-text">3.结束标识必须顶格独自占一行(即必须从行首开始，前后不能衔接任何空白和字符)。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">PHP数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-%E6%95%B0%E7%BB%84"><span class="toc-text">PHP 数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP-%E5%AF%B9%E8%B1%A1"><span class="toc-text">PHP 对象</span></a></li></ol>
-    
-    <div class="picture-container">
-      
+    <div class="cube-type">
+        <span class="cube-typed-title">senrenbankaの部落格</span>
+        <span class="cube-typed-cursor">|</span>
     </div>
-    <h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><p>超文本标记语言是一种用于创建网页的标准标记语言。<br>可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。<br>HTML 是用来描述网页的一种语言。<br>HTML 是一种标记语言<br>标记语言是一套标记标签<br>HTML 使用标记标签来描述网页</p>
+    
+</header>
+
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
+        
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+        
+            z-index: -1;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
+
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">senrenbankaの部落格</span>
+            <span class="cube-typed-cursor">|</span>
+        </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
+
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            <div class="cube-article">
+    <h1 class="title"></h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2024-09-17
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><p>超文本标记语言是一种用于创建网页的标准标记语言。<br>可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。<br>HTML 是用来描述网页的一种语言。<br>HTML 是一种标记语言<br>标记语言是一套标记标签<br>HTML 使用标记标签来描述网页</p>
 <h4 id="HTML语法结构"><a href="#HTML语法结构" class="headerlink" title="HTML语法结构"></a>HTML语法结构</h4><p><code>&lt;!DOCTYPE html&gt;</code><br><code>&lt;html&gt;</code></p>
 <p><code>&lt;head&gt;</code></p>
 <p><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></p>
@@ -193,98 +298,250 @@ EOF;
 </li>
 </ol>
 
+    </div>
+</div>
 
-  </article>
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <div class="busuanzi center">
-    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
-    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
-    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
-  </div>
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2024/09/24/JavaScript/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2024/09/09/Burpsuite/">
+                
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
 
 
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
+        </div>
+        <div class="cube-right">
+            
+
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="Search" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="Search" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
     
-
-
-
-
-
-    </div>
-  </div>
-  <footer class="page-footer"><div class="clearfix">
-</div>
-<div class="right-foot">
-    <div class="firstrow">
-        <a href="#top" target="_self">
-        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M10 30 L26 16 10 2 Z"></path>
-        </svg>
-        </a>
-        © XXX 2016-2020
-    </div>
-    <div class="secondrow">
-        <a target="_blank" rel="noopener" href="https://github.com/gaoryrt/hexo-theme-pln">
-        Theme Pln
-        </a>
+    
+    <span>John Doe</span>
+    
+    
+    <div class="count">
+        <a class="count articles"><span>4</span>Article</a>
+        <a class="count tags"><span>0</span>Tags</a>
+        <a class="count categories"><span>0</span>Categories</a>
     </div>
 </div>
-<div class="clearfix">
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
 </div>
-</footer>
-  <script type="text/javascript">
-
-// disqus scripts
-
-
-// dropdown scripts
-function $(s) {
-    return document.querySelector(s)
-  }
-
-  function $$(s) {
-    return document.querySelectorAll(s)
-  }
-  var dropDownElArr = $$('.dropdown')
-  for (var i = 0; i < dropDownElArr.length; i += 1) {
-    dropDownElArr[i].addEventListener('click', function(event) {
-      var content = this.querySelector('.dropdown-content')
-      event.stopPropagation()
-      if (content.className.indexOf('open') < 0) {
-        content.classList.add('open')
-      } else {
-        content.classList.remove('open')
-      }
-    })
-  }
-  document.body.addEventListener('click', function() {
-    var dropDownContentElArr = $$('.dropdown-content')
-    for (var i = 0; i < dropDownContentElArr.length; i += 1) {
-      dropDownContentElArr[i].classList.remove('open')
-    }
-  })
-
-  // smooth scroll
-  $$('a[href^="#"]').forEach(e=>{
-    e.addEventListener("click", function(e) {
-      e.preventDefault();
-      var t = this.getAttribute("href").substr(1);
-      $(`[id='${decodeURIComponent(t)}']`).scrollIntoView({
-        behavior: "smooth"
-      }),
-      t === "top" ? history.replaceState(null, null, " ") : history.pushState(null, null, `#${t}`)
-    })
-  })
-
-// search
-var searchEl = document.querySelector("#local-search-input")
-if (searchEl) searchEl.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    var s = e.target.value
-    window.open('//www.google.com/search?q=site:http://example.com%20' + s, '_blank').focus()
-  }
-})
-
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: 'Open Lyrics',
+            close: 'Close Lyrics'
+        }
+    })(window)
 </script>
 
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>Recent Posts</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2024/09/24/Computer%20Architecture%20Basics/" title=""></a>
+                </p>
+            </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2024/09/24/JavaScript/" title=""></a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2024/09/17/HTML/" title=""></a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2024/09/09/Burpsuite/" title=""></a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+
+
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/ZEROKISEKI" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/Coding.png">
+            
+            <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/SF.png">
+            
+            <a href="https://segmentfault.com/u/aonosora" target="_blank">SF社区</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/开发者头条.png">
+            
+            <a href="https://toutiao.io/u/148070" target="_blank">开发者头条</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>Friend Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/micblo.png">
+            <a href="https://blog.micblo.com/" target="_blank">罗大佬</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/DIYgod.jpg">
+            <a href="https://www.anotherhome.net/" target="_blank">DIYgod</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="/images/friend_links.jpg ">
+            <a href="https://aonosora.com/" target="_blank">咪西西の部落格</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 John Doe
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
 </body>
 </html>

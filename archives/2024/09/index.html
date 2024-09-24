@@ -1,256 +1,428 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="google-site-verification" content="" />
-  <meta name="referrer" content="unsafe-url">
-  
-  <title>2024/9</title>
-  <meta name="author" content="John Doe">
-  
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:site_name" content="Hexo"/>
-  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/m.min.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="John Doe">
+    
+    
+    
+    
+    
+    
+    <title>Archives | Hexo</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
 
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: 'Loading';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
 <meta name="generator" content="Hexo 7.3.0"></head>
-
 <body>
-  <a id="top"></a>
-  <div id="main">
-    <div class="main-ctnr">
-      <nav class="navbar">
-  <div class="nav-container">
-  <div class="nav navbar-nav navbar-left">
-    <div class="navbar-header">
-      <a href="/" class="navbar-brand">XXX</a>
-    </div>
-    
-
-  </div>
-  <div id="site_search" class="">
-  <input type="text" id="local-search-input" placeholder="search"/>
-</div>
-
-
-
-  <div class="nav navbar-nav navbar-right">
-    <div class="dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-        <svg class="i-link" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-          <path d="M18 8 C18 8 24 2 27 5 30 8 29 12 24 16 19 20 16 21 14 17 M14 24 C14 24 8 30 5 27 2 24 3 20 8 16 13 12 16 11 18 15"></path>
-        </svg>
-      </a>
-      <base href="/">
-      <ul class="dropdown-content">
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
         
-          <div>
-            <a href="/links.html">
-        links
-      </a>
-    </div>
-     
-          <div>
-            <a target="_blank" rel="noopener" href="https://github.com/XXX/">
-        Github
-      </a>
-    </div>
-     
-          <div>
-            <a href="/rss2.xml">
-        rss
-      </a>
-    </div>
-     
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
     </ul>
-    </div>
-    <div class="archives"><a href="/archives">
-      <svg class="i-archive" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-        <path d="M4 10 L4 28 28 28 28 10 M2 4 L2 10 30 10 30 4 Z M12 15 L20 15"></path>
-      </svg>
-    </a></div>
-  </div>
-  </div>
 </nav>
-
-
-
-<h1 class="archive-title ">
-  
-  <svg class="i-archive" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M4 10 L4 28 28 28 28 10 M2 4 L2 10 30 10 30 4 Z M12 15 L20 15"></path>
-  </svg>
-  
-  2024/9
-</h1>
-<div class="archive-num">
-  There are 4 articles in total
-</div>
-<div class="archive">
-  
-    
-      
-
-      
-
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
         
-
+        <li>
+            <a class="lrc-control">Open Lyrics</a>
+        </li>
         
+        <li>
+            <a class="scroll-to-top">Top</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" http://cube-1252774894.cosgz.myqcloud.com/background.png " alt="头部背景图片">
+    
+    <div class="cube-type">
+        <span class="cube-typed-title">senrenbankaの部落格</span>
+        <span class="cube-typed-cursor">|</span>
+    </div>
+    
+</header>
 
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
         
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+        
+            z-index: -1;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
 
-        </ul></section>
-        <section data-link="year-2024" class="section-year">
-            <h2>2024</h2>
-            <ul class="archive-list">
-                <div class="archive-item">
-                    <div class="archive-time">
-                      09-24
-                    </div>
-                    <div class="archive-detail">
-                      <a href="/2024/09/24/Computer%20Architecture%20Basics/" class="archive-link">
-                        
-                      </a>
-                    </div>
-                </div>
-                <hr>
-                
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">senrenbankaの部落格</span>
+            <span class="cube-typed-cursor">|</span>
+        </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
+
+        })(window)
+    </script>
     
-      
-
-      
-                <div class="archive-item">
-                    <div class="archive-time">
-                      09-24
-                    </div>
-                    <div class="archive-detail">
-                      <a href="/2024/09/24/JavaScript/" class="archive-link">
-                        
-                      </a>
-                    </div>
-                </div>
-                <hr>
-      
-    
-      
-
-      
-                <div class="archive-item">
-                    <div class="archive-time">
-                      09-17
-                    </div>
-                    <div class="archive-detail">
-                      <a href="/2024/09/17/HTML/" class="archive-link">
-                        
-                      </a>
-                    </div>
-                </div>
-                <hr>
-      
-    
-      
-
-      
-                <div class="archive-item">
-                    <div class="archive-time">
-                      09-09
-                    </div>
-                    <div class="archive-detail">
-                      <a href="/2024/09/09/Burpsuite/" class="archive-link">
-                        
-                      </a>
-                    </div>
-                </div>
-                <hr>
-      
-    
-</div>
-
-
-    </div>
-  </div>
-  <footer class="page-footer"><div class="clearfix">
-</div>
-<div class="right-foot">
-    <div class="firstrow">
-        <a href="#top" target="_self">
-        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-            <path d="M10 30 L26 16 10 2 Z"></path>
-        </svg>
-        </a>
-        © XXX 2016-2020
-    </div>
-    <div class="secondrow">
-        <a target="_blank" rel="noopener" href="https://github.com/gaoryrt/hexo-theme-pln">
-        Theme Pln
-        </a>
-    </div>
-</div>
-<div class="clearfix">
-</div>
-</footer>
-  <script type="text/javascript">
-
-// disqus scripts
-
-
-// dropdown scripts
-function $(s) {
-    return document.querySelector(s)
-  }
-
-  function $$(s) {
-    return document.querySelectorAll(s)
-  }
-  var dropDownElArr = $$('.dropdown')
-  for (var i = 0; i < dropDownElArr.length; i += 1) {
-    dropDownElArr[i].addEventListener('click', function(event) {
-      var content = this.querySelector('.dropdown-content')
-      event.stopPropagation()
-      if (content.className.indexOf('open') < 0) {
-        content.classList.add('open')
-      } else {
-        content.classList.remove('open')
-      }
-    })
-  }
-  document.body.addEventListener('click', function() {
-    var dropDownContentElArr = $$('.dropdown-content')
-    for (var i = 0; i < dropDownContentElArr.length; i += 1) {
-      dropDownContentElArr[i].classList.remove('open')
+    <div class="cube-content">
+        <div class="cube-left">
+            <style>
+    @media(max-width: 768px) {
+        body {
+            background-color: #fff!important;
+        }
     }
-  })
+</style>
+<div class="cube-archives">
+    
+        
+        <div class="cube-archive" style="margin-top: 0;">
+            
+                
+                   
+                            <h1 class="title">2024</h1>
+                            <ul class="posts">
+                   
+                            <li class="post">
+                                <a href="/2024/09/24/Computer%20Architecture%20Basics/"></a>
+                            </li>
+                
+            
+                
+                   
+                            <li class="post">
+                                <a href="/2024/09/24/JavaScript/"></a>
+                            </li>
+                
+            
+                
+                   
+                            <li class="post">
+                                <a href="/2024/09/17/HTML/"></a>
+                            </li>
+                
+            
+                
+                   
+                            <li class="post">
+                                <a href="/2024/09/09/Burpsuite/"></a>
+                            </li>
+                
+            
+                    </ul>
+                        </div>
+        
+    
+</div>
+        </div>
+        <div class="cube-right">
+            
 
-  // smooth scroll
-  $$('a[href^="#"]').forEach(e=>{
-    e.addEventListener("click", function(e) {
-      e.preventDefault();
-      var t = this.getAttribute("href").substr(1);
-      $(`[id='${decodeURIComponent(t)}']`).scrollIntoView({
-        behavior: "smooth"
-      }),
-      t === "top" ? history.replaceState(null, null, " ") : history.pushState(null, null, `#${t}`)
-    })
-  })
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="Search" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="Search" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
 
-// search
-var searchEl = document.querySelector("#local-search-input")
-if (searchEl) searchEl.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    var s = e.target.value
-    window.open('//www.google.com/search?q=site:http://example.com%20' + s, '_blank').focus()
-  }
-})
 
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <span>John Doe</span>
+    
+    
+    <div class="count">
+        <a class="count articles"><span>4</span>Article</a>
+        <a class="count tags"><span>0</span>Tags</a>
+        <a class="count categories"><span>0</span>Categories</a>
+    </div>
+</div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: 'Open Lyrics',
+            close: 'Close Lyrics'
+        }
+    })(window)
 </script>
 
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>Recent Posts</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2024/09/24/Computer%20Architecture%20Basics/" title=""></a>
+                </p>
+            </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2024/09/24/JavaScript/" title=""></a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2024/09/17/HTML/" title=""></a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2024/09/09/Burpsuite/" title=""></a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+
+
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/ZEROKISEKI" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/Coding.png">
+            
+            <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/SF.png">
+            
+            <a href="https://segmentfault.com/u/aonosora" target="_blank">SF社区</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/开发者头条.png">
+            
+            <a href="https://toutiao.io/u/148070" target="_blank">开发者头条</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>Friend Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/micblo.png">
+            <a href="https://blog.micblo.com/" target="_blank">罗大佬</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/DIYgod.jpg">
+            <a href="https://www.anotherhome.net/" target="_blank">DIYgod</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="/images/friend_links.jpg ">
+            <a href="https://aonosora.com/" target="_blank">咪西西の部落格</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 John Doe
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
 </body>
 </html>
