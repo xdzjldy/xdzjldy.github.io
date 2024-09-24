@@ -262,8 +262,7 @@ EOF;
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>title:Burpsuite</p>
-<h3 id="Burpsuite"><a href="#Burpsuite" class="headerlink" title="Burpsuite"></a>Burpsuite</h3><p>1.Proxy：用于拦截和修改HTTP请求和响应，并允许用户在发送到目标服务器之前手动修改请求内容。</p>
+        <h3 id="Burpsuite"><a href="#Burpsuite" class="headerlink" title="Burpsuite"></a>Burpsuite</h3><p>1.Proxy：用于拦截和修改HTTP请求和响应，并允许用户在发送到目标服务器之前手动修改请求内容。</p>
 <p>1.1.Intercept:允许用户拦截应用程序的HTTP和HTTPS请求，查看和修改请求，然后转发到目标服务器。使用Intercept，用户可以深入分析应用程序的请求和响应，并查找潜在的漏洞。Intercept还可以帮助用户快速验证漏洞的利用。  </p>
 <p>在浏览器上安装Proxy SwitchyOmega,进行快速代理。</p>
 <p>须将浏览器的流量包转移到burpsuit上，burpsuit再进行发包。</p>
@@ -290,7 +289,7 @@ EOF;
 <p> 请求体（Body）：放置实际提交的数据，不同的 Content-Type 决定了数据的格式，可以是表单数据、JSON、XML 等。</p>
 <p>多次发送相同的 GET 请求会产生相同的结果，不会对服务器状态产生影响。<br>这使得 GET 请求适合用于获取静态资源，如网页、图片、文件等。<br>POST 请求主要用于向服务器提交数据，通常用于创建、更新或删除资源。它将请求的参数作为请求体的一部分发送到服务器。POST 请求是非幂等的，即多次发送相同的 POST 请求可能会产生不同的结果，因为它可能会改变服务器的状态。<br>GET 和 POST 请求的存在是为了满足不同的需求。GET 请求适用于获取数据，而 POST 请求适用于提交数据并对服务器状态进行更改。选择正确的请求方法取决于请求的性质和预期的服务器操作。</p>
 <p>GET比POST更不安全，因为GET参数会直接暴露在url上。所以不能用来传递敏感信息get 请求的参数传递方式<br>在 HTTP 请求中，GET 请求可以通过 URL 参数或者请求体的方式传递参数。</p>
-<h4 id="1-URL-参数：GET-请求可以通过-URL-中指定的-key-value-形式传递参数。"><a href="#1-URL-参数：GET-请求可以通过-URL-中指定的-key-value-形式传递参数。" class="headerlink" title="1.URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。"></a>1.URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。</h4><h4 id="2-请求体（仅适用于-POST、PUT、PATCH-请求）：当-POST、PUT-或-PATCH-请求的-URL-中没有指定参数时，参数会被放置在请求体中。"><a href="#2-请求体（仅适用于-POST、PUT、PATCH-请求）：当-POST、PUT-或-PATCH-请求的-URL-中没有指定参数时，参数会被放置在请求体中。" class="headerlink" title="2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。"></a>2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。</h4><p>请求体中的数据可以是表单数据、JSON 数据等。<br>例如，使用 POST 请求将 JSON 数据发送到如下 URL 时，请求体中的 JSON 数据如下：<br>{<br> “name”: “John Doe”,<br> “email”: “<a href="mailto:&#x6a;&#111;&#104;&#x6e;&#x2e;&#x64;&#111;&#x65;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#x6a;&#111;&#104;&#x6e;&#x2e;&#x64;&#111;&#x65;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a>“<br>}</p>
+<h4 id="1-URL-参数：GET-请求可以通过-URL-中指定的-key-value-形式传递参数。"><a href="#1-URL-参数：GET-请求可以通过-URL-中指定的-key-value-形式传递参数。" class="headerlink" title="1.URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。"></a>1.URL 参数：GET 请求可以通过 URL 中指定的 key-value 形式传递参数。</h4><h4 id="2-请求体（仅适用于-POST、PUT、PATCH-请求）：当-POST、PUT-或-PATCH-请求的-URL-中没有指定参数时，参数会被放置在请求体中。"><a href="#2-请求体（仅适用于-POST、PUT、PATCH-请求）：当-POST、PUT-或-PATCH-请求的-URL-中没有指定参数时，参数会被放置在请求体中。" class="headerlink" title="2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。"></a>2.请求体（仅适用于 POST、PUT、PATCH 请求）：当 POST、PUT 或 PATCH 请求的 URL 中没有指定参数时，参数会被放置在请求体中。</h4><p>请求体中的数据可以是表单数据、JSON 数据等。<br>例如，使用 POST 请求将 JSON 数据发送到如下 URL 时，请求体中的 JSON 数据如下：<br>{<br> “name”: “John Doe”,<br> “email”: “<a href="mailto:&#106;&#x6f;&#x68;&#110;&#x2e;&#100;&#x6f;&#101;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#109;">&#106;&#x6f;&#x68;&#110;&#x2e;&#100;&#x6f;&#101;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#109;</a>“<br>}</p>
 <h3 id="HTTP-1"><a href="#HTTP-1" class="headerlink" title="HTTP"></a>HTTP</h3><h4 id="1-请求报文格式"><a href="#1-请求报文格式" class="headerlink" title="1.请求报文格式"></a>1.请求报文格式</h4><p><method><request-URL><version><br><headers></p>
 <entity-body>
 #### 2.响应报文格式
