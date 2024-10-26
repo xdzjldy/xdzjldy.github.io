@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>网络</title>
+      <link href="/2024/10/26/web/"/>
+      <url>/2024/10/26/web/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-生成HTTP请求消息"><a href="#1-生成HTTP请求消息" class="headerlink" title="1.生成HTTP请求消息"></a>1.生成HTTP请求消息</h1><h2 id="1-1输入网址-URL"><a href="#1-1输入网址-URL" class="headerlink" title="1.1输入网址(URL)"></a>1.1输入网址(URL)</h2><p>包含服务器的域名和要访问的文件的路径名：<br>http:访问Web服务器<br>ftp:访问FTP服务器<br>包含收件人的邮件地址：<br>mailto:发邮件<br>URL开头的文字表示浏览器应当使用的访问方法，可以理解为访问时使用的协议类型。</p><h2 id="1-2浏览器解析URL"><a href="#1-2浏览器解析URL" class="headerlink" title="1.2浏览器解析URL"></a>1.2浏览器解析URL</h2><p>将其中各个元素拆分出来<br>省略文件名的情况<br>服务器上事先设置好文件名省略时要访问的默认文件名。<br>大多数情况下是index.html或default.htm之类的文件名</p><h1 id="2-向DNS服务器查询Web服务器的IP地址"><a href="#2-向DNS服务器查询Web服务器的IP地址" class="headerlink" title="2.向DNS服务器查询Web服务器的IP地址"></a>2.向DNS服务器查询Web服务器的IP地址</h1><h1 id="3-全世界DNS服务器的大接力"><a href="#3-全世界DNS服务器的大接力" class="headerlink" title="3.全世界DNS服务器的大接力"></a>3.全世界DNS服务器的大接力</h1><h1 id="4-委托协议栈发送消息"><a href="#4-委托协议栈发送消息" class="headerlink" title="4.委托协议栈发送消息"></a>4.委托协议栈发送消息</h1>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2024/10/15/XSS%E6%94%BB%E5%87%BB%E7%9A%84%E5%88%86%E7%B1%BB/"/>
       <url>/2024/10/15/XSS%E6%94%BB%E5%87%BB%E7%9A%84%E5%88%86%E7%B1%BB/</url>
